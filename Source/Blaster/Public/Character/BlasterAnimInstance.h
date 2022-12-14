@@ -7,6 +7,7 @@
 #include "BlasterAnimInstance.generated.h"
 
 class ABlasterCharacter;
+class AWeapon;
 
 /**
  * 
@@ -62,4 +63,10 @@ private:
 	FRotator CharacterRotationLastFrame;
 	FRotator CharacterRotationCurrent;
 	FRotator DeltaRotation;
+
+	UPROPERTY(BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
+	FTransform LeftHandTransform;
+
+	AWeapon* EquippedWeapon;
+
 };
